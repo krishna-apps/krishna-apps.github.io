@@ -3,7 +3,6 @@
   <div class="slides">
     <transition name="slide">
       <slide
-        @get-in-touch="showModal = true"
         :slide="slides[slide_ind]"
         :key="slide_ind"
       ></slide>
@@ -46,13 +45,13 @@ export default {
       slide_ind: 0,
     };
   },
-  components: {
-    Slide,
-  },
   mounted() {
     setInterval(() => {
       this.slide_ind = (this.slide_ind + 1) % this.slides.length;
     }, 3500);
+  },
+  components: {
+    Slide,
   },
 };
 </script>

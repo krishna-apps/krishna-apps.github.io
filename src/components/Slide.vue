@@ -11,7 +11,7 @@
       <p>{{ slide.description }}</p>
     </transition>
     <transition name="slide-up" appear>
-      <button class="btn" @click="getInTouch()">GET IN TOUCH</button>
+      <button class="btn" @click="$root.showModal = true">GET IN TOUCH</button>
     </transition>
     <span class="spacer"></span>
   </div>
@@ -19,11 +19,6 @@
 <script>
 export default {
     name: 'Slide',
-    methods: {
-        getInTouch() {
-            this.$emit('getInTouch');
-        }
-    },
     props: ['slide']
 };
 </script>
